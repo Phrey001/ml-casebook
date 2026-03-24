@@ -1,6 +1,6 @@
 # ML Casebook
 
-A curated collection of machine learning examples — focusing on problem framing, model decisions, tradeoffs, and production considerations.
+A curated collection of machine learning examples.
 
 This repository is an evolving casebook to document and develop applied ML thinking.
 
