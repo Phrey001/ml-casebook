@@ -20,6 +20,7 @@ The emphasis is on clarity and practical reasoning, rather than model complexity
   - Notebook: `ml-examples/churn_prediction/churn_prediction.ipynb`
   - Companion framing note: `ml-examples/churn_prediction/churn_problem_framing.md`
 - Movie Recommender System
+  - Framed around personalized recommendation with lightweight implementations and practical evaluation considerations
   - Main notebook: `ml-examples/recommender/recommender.ipynb`
   - Companion framing note: `ml-examples/recommender/recommender_problem_framing.md`
   - Lightweight framework demos:
