@@ -7807,7 +7807,7 @@ a.anchor-link {
 <li>On this test split, Logistic Regression slightly outperformed XGBoost on ROC-AUC (<code>0.846</code> vs <code>0.841</code>), showing that the baseline is already strong.</li>
 <li>In a budget-constrained scenario, targeting the top 20% highest-risk customers captures about 50% of actual churners and roughly <code>$229k</code> (<code>56%</code> of annualized churn revenue in this test split).</li>
 <li>Contract structure is the clearest actionable lever: month-to-month customers churn about 15x as often as two-year contract customers.</li>
-<li>Recommended decision policy: rank customers by churn risk, select the top segment based on campaign capacity, then prioritize the highest-risk and highest-value customers for tailored offers.</li>
+<li>Recommended decision policy: rank customers by churn risk, select the top segment based on campaign capacity, and use tailored offers for the highest-risk customers; in practice, customer value should also inform final outreach priorities.</li>
 </ul>
 <p>Dataset: <a href="https://www.kaggle.com/datasets/blastchar/telco-customer-churn">IBM Telco Customer Churn (Kaggle)</a></p>
 </div>
@@ -12923,6 +12923,7 @@ forceTheme('sk-container-id-2');</script></body>
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Limitations-and-Scope">Limitations and Scope<a class="anchor-link" href="#Limitations-and-Scope">¶</a></h2><p>This notebook is intentionally scoped to prediction and prioritization rather than full decision optimization.</p>
 <ul>
+<li>Customers are ranked by predicted churn risk rather than expected economic loss. In practice, a production retention workflow would often combine churn risk with customer value to prioritize outreach by expected value at risk.</li>
 <li>The model estimates churn risk, but it does not identify the causal reason a customer leaves.</li>
 <li>No intervention or offer-response data is available, so the notebook cannot estimate which retention action is most effective for each customer.</li>
 <li>Threshold selection is illustrated from a precision-recall perspective, not optimized using full retention economics such as customer lifetime value, offer cost, or contact cost.</li>
