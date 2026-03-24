@@ -1,12 +1,22 @@
 # ML Casebook
 
-A curated collection of machine learning examples with a focus on problem framing, model decisions, and practical considerations.
+A set of applied machine learning use cases with a focus on problem framing, model trade-offs, and practical decision-making contexts.
 
-This repository is an evolving casebook to document and develop applied ML thinking.
+This repository approaches ML problems in a structured way, from defining the business objective to selecting models and evaluating outcomes.
 
-## Current Contents
+The goal is to build intuition for how machine learning models are used in practice, where modeling choices are closely tied to decision objectives and constraints.
+
+Each use case may include:
+- Companion problem-framing notes
+- Lightweight implementation in reproducible notebooks
+- Discussion of modeling choices, evaluation design, and practical limitations
+
+The emphasis is on clarity and practical reasoning, rather than model complexity.
+
+## Current Use Cases
 
 - Customer Churn Prediction
+  - Framed as a prioritization problem under limited retention budget
   - Notebook: `ml-examples/churn_prediction/churn_prediction.ipynb`
   - Companion framing note: `ml-examples/churn_prediction/churn_problem_framing.md`
 - Movie Recommender System
@@ -24,7 +34,7 @@ This repository is an evolving casebook to document and develop applied ML think
 - Notebook companion framing template: `ml-examples/templates/notebook_problem_framing_template.md`
 - Pure-thinking case template: `ml-examples/templates/case_thinking_template.md`
 
-More ML examples and case thinking to be added.
+More use cases and extensions will be added over time.
 
 ## Virtual Environment Setup
 
