@@ -7803,10 +7803,11 @@ a.anchor-link {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h1 id="Churn-Prediction:-IBM-Telco-Customer-Churn">Churn Prediction: IBM Telco Customer Churn<a class="anchor-link" href="#Churn-Prediction:-IBM-Telco-Customer-Churn">¶</a></h1><h2 id="Executive-Summary">Executive Summary<a class="anchor-link" href="#Executive-Summary">¶</a></h2><ul>
-<li><strong>Problem:</strong> Customer churn reduces recurring revenue, so the goal is to identify which customers should be prioritized for retention outreach.</li>
+<li><strong>Problem:</strong> Which customers should be prioritized for retention outreach?</li>
+<li><strong>Why it matters:</strong> Churn reduces recurring revenue, and retention is often cheaper than acquisition.</li>
 <li><strong>Approach:</strong> Clean the Telco churn data, compare a Logistic Regression baseline with XGBoost, and evaluate model outputs in a budget-constrained targeting setting.</li>
-<li><strong>Key Insight:</strong> On this test split, Logistic Regression slightly outperformed XGBoost on ROC-AUC (<code>0.846</code> vs <code>0.841</code>), and the top 20% highest-risk customers contain about 50% of actual churners and roughly <code>$229k</code> (<code>56%</code> of annualized churn revenue in this test split).</li>
-<li><strong>Outcome:</strong> Contract structure is the clearest actionable lever, and churn-risk ranking can be used to target the highest-risk customers first; in practice, customer value should also inform final outreach priorities.</li>
+<li><strong>Key Result:</strong> On this test split, Logistic Regression slightly outperformed XGBoost on ROC-AUC (<code>0.846</code> vs <code>0.841</code>), and the top 20% highest-risk customers contain about 50% of actual churners and roughly <code>$229k</code> (<code>56%</code> of annualized churn revenue in this test split).</li>
+<li><strong>Key Insight:</strong> Contract structure is the clearest actionable lever, and churn-risk ranking can guide who should be contacted first; in practice, customer value should also inform final outreach priorities.</li>
 </ul>
 <p>Dataset: <a href="https://www.kaggle.com/datasets/blastchar/telco-customer-churn">IBM Telco Customer Churn (Kaggle)</a></p>
 </div>
@@ -7867,9 +7868,9 @@ a.anchor-link {
 <p><strong>Business use:</strong> The predicted output is a risk signal, not a certainty. Higher-risk customers move higher on the retention priority list, while the final action depends on budget, customer value, and campaign capacity.</p>
 <p><strong>Success criteria:</strong></p>
 <ul>
-<li>Rank customers by churn risk reliably.</li>
-<li>Pick an operating threshold that matches retention capacity.</li>
-<li>Surface interpretable drivers so actions are not just predictive, but useful.</li>
+<li>Put the highest-risk customers near the top of the list so retention teams know where to focus first.</li>
+<li>Support a practical outreach rule that matches how many customers the team can actually contact.</li>
+<li>Highlight the main reasons customers appear risky, so the model can inform action rather than just prediction.</li>
 </ul>
 </div>
 </div>
@@ -11654,25 +11655,25 @@ forceTheme('sk-container-id-2');</script></body>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Model-Evaluation">Model Evaluation<a class="anchor-link" href="#Model-Evaluation">¶</a></h2><p>This is not just a classification task. In practice, the model is used to rank customers by churn risk so the business can focus limited retention resources where they are most likely to matter.</p>
-<p>Evaluation compares the model signal with what actually happened:</p>
+<h2 id="Model-Evaluation">Model Evaluation<a class="anchor-link" href="#Model-Evaluation">¶</a></h2><p>This is not just a classification task. In practice, the model is used to sort customers from highest churn risk to lowest so the business can focus limited retention resources where they are most likely to matter.</p>
+<p>Evaluation compares the model's risk signal with what actually happened:</p>
 <ul>
 <li><strong>Actual <code>y</code>:</strong> whether the customer truly churned (<code>1</code>) or stayed (<code>0</code>).</li>
-<li><strong>Predicted probability:</strong> the model's estimated churn risk.</li>
-<li><strong>Predicted <code>y</code>:</strong> the final churn flag after applying a threshold to that probability.</li>
+<li><strong>Predicted probability:</strong> the model's estimated chance that a customer will churn.</li>
+<li><strong>Predicted <code>y</code>:</strong> the final yes/no churn flag after applying a cutoff to that probability.</li>
 </ul>
 <p>Two evaluation views are useful here:</p>
 <ul>
-<li><strong>Ranking view:</strong> Does the model place the riskiest customers near the top of the list?</li>
-<li><strong>Decision view:</strong> If the business acts on the model, what outreach trade-offs follow?</li>
+<li><strong>Ranking view:</strong> Does the model put the riskiest customers near the top of the list?</li>
+<li><strong>Decision view:</strong> If the business acts on the model, what trade-offs follow?</li>
 </ul>
 <p>Evaluation should reflect both ranking quality and campaign usefulness:</p>
 <ul>
-<li><strong>ROC-AUC:</strong> How well the predicted probabilities rank actual churners above non-churners across thresholds.</li>
-<li><strong>Precision:</strong> Of the customers predicted as churners, how many actually churned.</li>
-<li><strong>Recall:</strong> Of the customers who actually churned, how many were correctly predicted as churners.</li>
-<li><strong>F1:</strong> A compact balance between precision and recall.</li>
-<li><strong>Confusion matrix:</strong> Shows the counts behind those outcomes, including missed churners and unnecessary outreach.</li>
+<li><strong>ROC-AUC:</strong> Checks whether real churners tend to appear higher on the risk list than non-churners.</li>
+<li><strong>Precision:</strong> Of the customers flagged as likely churners, how many actually churned.</li>
+<li><strong>Recall:</strong> Of the customers who actually churned, how many were correctly flagged.</li>
+<li><strong>F1:</strong> A single score that balances precision and recall.</li>
+<li><strong>Confusion matrix:</strong> Shows the actual counts behind those outcomes, including missed churners and unnecessary outreach.</li>
 </ul>
 </div>
 </div>
@@ -11833,8 +11834,8 @@ forceTheme('sk-container-id-2');</script></body>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>The ROC curves answer the ranking question: which model is better at pushing likely churners toward the top of the list? On this split, the baseline is slightly better, which is why it becomes the selected model for the operational examples.</p>
-<p>The confusion matrix answers a different question: what happens if the business uses a simple yes/no rule? With the default <code>0.50</code> threshold, the model correctly flags <code>371</code> churners, misses <code>96</code>, and would send unnecessary outreach to <code>345</code> customers who were predicted to churn but actually stayed.</p>
+<p>The ROC curves answer a simple question: which model does a better job of placing real churners near the top of the risk list? On this split, the baseline is slightly better, which is why it becomes the selected model for the operational examples.</p>
+<p>The confusion matrix answers a different question: what happens if the business uses a simple yes/no rule? With the default <code>0.50</code> cutoff, the model correctly flags <code>371</code> churners, misses <code>96</code>, and would send unnecessary outreach to <code>345</code> customers who were flagged as likely churners but actually stayed.</p>
 </div>
 </div>
 </div>
@@ -11845,14 +11846,14 @@ forceTheme('sk-container-id-2');</script></body>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Top-K-Campaign-Policy-Evaluation">Top-K Campaign Policy Evaluation<a class="anchor-link" href="#Top-K-Campaign-Policy-Evaluation">¶</a></h2><p>Retention teams often work from a ranked list rather than a fixed probability cutoff. Top-K evaluation asks how many actual churners are captured when the business contacts only the top 10%, 20%, or 30% highest-risk customers.</p>
+<h2 id="Top-K-Campaign-Policy-Evaluation">Top-K Campaign Policy Evaluation<a class="anchor-link" href="#Top-K-Campaign-Policy-Evaluation">¶</a></h2><p>Retention teams often work from a ranked list rather than a fixed probability cutoff. Top-K evaluation asks a practical question: if the business contacts only the top 10%, 20%, or 30% highest-risk customers, how many real churners are reached?</p>
 <p>The key distinction between the next two sections is simple: Top-K assumes the business already knows how large the campaign should be, while threshold-based policy assumes the business wants a yes/no rule based on model probability.</p>
 <p>This is different from threshold tuning:</p>
 <ul>
 <li><strong>Threshold tuning</strong> asks which probability cutoff should turn the same model scores into a yes/no action rule.</li>
 <li><strong>Top-K evaluation</strong> asks what happens when the business simply takes the highest-risk slice of customers, regardless of the exact cutoff value.</li>
 </ul>
-<p>That makes Top-K the more operational view when campaign size is fixed.</p>
+<p>That makes Top-K the more natural view when campaign size is fixed.</p>
 </div>
 </div>
 </div>
@@ -12020,15 +12021,15 @@ forceTheme('sk-container-id-2');</script></body>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Threshold-Policy-Sensitivity-Analysis">Threshold Policy Sensitivity Analysis<a class="anchor-link" href="#Threshold-Policy-Sensitivity-Analysis">¶</a></h2><p>The default <code>0.50</code> threshold is rarely the best business choice.</p>
+<h2 id="Threshold-Policy-Sensitivity-Analysis">Threshold Policy Sensitivity Analysis<a class="anchor-link" href="#Threshold-Policy-Sensitivity-Analysis">¶</a></h2><p>The default <code>0.50</code> cutoff is rarely the best business choice.</p>
 <p>This section can be read as a sensitivity analysis of one specific policy: flag any customer whose predicted churn probability is above a chosen cutoff.</p>
-<p>A <code>0.50</code> threshold means any customer with predicted churn probability of 50% or more is labeled as a likely churner. Changing that threshold changes the action rule applied to the same model output; it does not change the underlying model or the predicted probabilities themselves. It is a standard modeling default, but it is not automatically the best rule for a retention campaign.</p>
+<p>A <code>0.50</code> cutoff means any customer with predicted churn probability of 50% or more is labeled as a likely churner. Changing that cutoff changes the action rule applied to the same model output; it does not change the underlying model or the predicted probabilities themselves. It is a standard modeling default, but it is not automatically the best rule for a retention campaign.</p>
 <p>For retention teams:</p>
 <ul>
-<li>Lower threshold: reach more potential churners, but spend more budget on customers who may have stayed anyway.</li>
-<li>Higher threshold: concentrate budget on fewer customers, but allow more likely churners to go untouched.</li>
+<li>Lower cutoff: reach more potential churners, but spend more budget on customers who may have stayed anyway.</li>
+<li>Higher cutoff: concentrate budget on fewer customers, but allow more likely churners to go untouched.</li>
 </ul>
-<p>A good operating point depends on campaign cost, agent capacity, and the value of saving a customer. This threshold view is still useful because some workflows need a yes/no action rule, but many retention teams will prefer the Top-K view when campaign size is fixed.</p>
+<p>A good cutoff depends on campaign cost, agent capacity, and the value of saving a customer. This view is still useful because some workflows need a yes/no action rule, but many retention teams will prefer the Top-K view when campaign size is fixed.</p>
 <p><code>predict_proba</code> is used here instead of hard class labels so the action rule can be adjusted without retraining the model.</p>
 </div>
 </div>
