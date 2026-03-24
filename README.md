@@ -1,13 +1,12 @@
 # ML Casebook
 
-A curated collection of machine learning examples.
+A curated collection of machine learning examples with a focus on problem framing, model decisions, and practical considerations.
 
 This repository is an evolving casebook to document and develop applied ML thinking.
 
 ## Current Contents
 
-- Customer Churn Prediction (Classification)  
-  Problem framing, feature engineering, model comparison, evaluation, and production considerations
+- Customer Churn Prediction (Classification)
 
 More ML examples and case thinking to be added.
 
