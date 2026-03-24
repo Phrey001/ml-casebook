@@ -1,5 +1,8 @@
 pandas
+numpy
 scikit-learn
+tensorflow==2.21.0
+torch==2.6.0
 xgboost
 matplotlib
 seaborn
