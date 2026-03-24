@@ -1,6 +1,17 @@
-# ml-casebook
+# ML Casebook
 
-Use a shared repo-level virtual environment for the notebooks in this repository.
+A curated collection of machine learning examples — focusing on problem framing, model decisions, tradeoffs, and production considerations.
+
+This repository is an evolving casebook to document and develop applied ML thinking.
+
+## Current Contents
+
+- Customer Churn Prediction (Classification)  
+  Problem framing, feature engineering, model comparison, evaluation, and production considerations
+
+More ML examples and case thinking to be added.
+
+## Virtual Environment Setup
 
 ```bash
 python3 -m venv .venv
