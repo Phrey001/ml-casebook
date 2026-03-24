@@ -7803,11 +7803,10 @@ a.anchor-link {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h1 id="Churn-Prediction:-IBM-Telco-Customer-Churn">Churn Prediction: IBM Telco Customer Churn<a class="anchor-link" href="#Churn-Prediction:-IBM-Telco-Customer-Churn">¶</a></h1><h2 id="Executive-Summary">Executive Summary<a class="anchor-link" href="#Executive-Summary">¶</a></h2><ul>
-<li>The objective is to identify customers most at risk of churn so retention efforts can be focused where they are most likely to pay off.</li>
-<li>On this test split, Logistic Regression slightly outperformed XGBoost on ROC-AUC (<code>0.846</code> vs <code>0.841</code>), showing that the baseline is already strong.</li>
-<li>In a budget-constrained scenario, targeting the top 20% highest-risk customers captures about 50% of actual churners and roughly <code>$229k</code> (<code>56%</code> of annualized churn revenue in this test split).</li>
-<li>Contract structure is the clearest actionable lever: month-to-month customers churn about 15x as often as two-year contract customers.</li>
-<li>Recommended decision policy: rank customers by churn risk, select the top segment based on campaign capacity, and use tailored offers for the highest-risk customers; in practice, customer value should also inform final outreach priorities.</li>
+<li><strong>Problem:</strong> Customer churn reduces recurring revenue, so the goal is to identify which customers should be prioritized for retention outreach.</li>
+<li><strong>Approach:</strong> Clean the Telco churn data, compare a Logistic Regression baseline with XGBoost, and evaluate model outputs in a budget-constrained targeting setting.</li>
+<li><strong>Key Insight:</strong> On this test split, Logistic Regression slightly outperformed XGBoost on ROC-AUC (<code>0.846</code> vs <code>0.841</code>), and the top 20% highest-risk customers contain about 50% of actual churners and roughly <code>$229k</code> (<code>56%</code> of annualized churn revenue in this test split).</li>
+<li><strong>Outcome:</strong> Contract structure is the clearest actionable lever, and churn-risk ranking can be used to target the highest-risk customers first; in practice, customer value should also inform final outreach priorities.</li>
 </ul>
 <p>Dataset: <a href="https://www.kaggle.com/datasets/blastchar/telco-customer-churn">IBM Telco Customer Churn (Kaggle)</a></p>
 </div>
