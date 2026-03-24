@@ -6,7 +6,23 @@ This repository is an evolving casebook to document and develop applied ML think
 
 ## Current Contents
 
-- Customer Churn Prediction (Classification)
+- Customer Churn Prediction
+  - Notebook: `ml-examples/churn_prediction/churn_prediction.ipynb`
+  - Companion framing note: `ml-examples/churn_prediction/churn_problem_framing.md`
+- Movie Recommender System
+  - Main notebook: `ml-examples/recommender/recommender.ipynb`
+  - Companion framing note: `ml-examples/recommender/recommender_problem_framing.md`
+  - Lightweight framework demos:
+    - `ml-examples/recommender/demo/tensorflow_recommender_demo.ipynb`
+    - `ml-examples/recommender/demo/pytorch_recommender_demo.ipynb`
+  - Demo practices note:
+    - `ml-examples/recommender/demo/deep_learning_recommended_practices.md`
+
+## Templates
+
+- Notebook template: `ml-examples/templates/ipynb_template.md`
+- Notebook companion framing template: `ml-examples/templates/notebook_problem_framing_template.md`
+- Pure-thinking case template: `ml-examples/templates/case_thinking_template.md`
 
 More ML examples and case thinking to be added.
 
