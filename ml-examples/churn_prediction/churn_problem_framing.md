@@ -56,7 +56,7 @@ Both formats are kept intentionally. The slides are optimized for presentation a
 ## Metric & Validation
 - Evaluate the model mainly as a ranking tool, not just a yes/no classifier.
 - Use ROC-AUC to assess overall ranking quality.
-- Use Top-K evaluation to measure how many churners are captured within target segments such as the top 10% or 20%.
+- Use Top-K% evaluation to measure how many churners are captured within target segments such as the top 10% or 20%.
 - Use a train-test split so evaluation reflects out-of-sample performance.
 
 ## Approach
