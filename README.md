@@ -7,7 +7,7 @@ This repository approaches ML problems in a structured way, from defining the bu
 The goal is to build intuition for how machine learning models are used in practice, where modeling choices are closely tied to decision objectives and constraints.
 
 Each use case may include:
-- Companion problem-framing notes
+- Companion problem-framing materials such as notes or decks
 - Lightweight implementation in reproducible notebooks
 - Discussion of modeling choices, evaluation design, and practical limitations
 
