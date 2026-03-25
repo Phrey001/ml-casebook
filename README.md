@@ -17,17 +17,12 @@ The emphasis is on clarity and practical reasoning, rather than model complexity
 
 - Customer Churn Prediction
   - Framed as a prioritization problem under limited retention budget
-  - Notebook: `ml-examples/churn_prediction/churn_prediction.ipynb`
-  - Companion framing note: `ml-examples/churn_prediction/churn_problem_framing.md`
+  - Main notebook: `ml-examples/churn_prediction/churn_prediction.ipynb`
 - Movie Recommender System
   - Framed around personalized recommendation with lightweight implementations and practical evaluation considerations
   - Main notebook: `ml-examples/recommender/recommender.ipynb`
-  - Companion framing note: `ml-examples/recommender/recommender_problem_framing.md`
-  - Lightweight framework demos:
-    - `ml-examples/recommender/demo/tensorflow_recommender_demo.ipynb`
-    - `ml-examples/recommender/demo/pytorch_recommender_demo.ipynb`
-  - Demo practices note:
-    - `ml-examples/recommender/demo/deep_learning_recommended_practices.md`
+
+Each use case may also include companion problem-framing notes and lightweight supporting demos where useful.
 
 ## Templates
 
