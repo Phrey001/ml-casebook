@@ -1,39 +1,6 @@
 # Churn Prediction Problem Framing
 
-Both formats are kept intentionally. The slides are optimized for presentation and fast visual communication, while the memo is optimized for structured thinking during planning.
-
-## Slides
-
-<details>
-<summary>View exported slides</summary>
-
-![Slide 1](slides/Slide1.PNG)
-
-![Slide 2](slides/Slide2.PNG)
-
-![Slide 3](slides/Slide3.PNG)
-
-![Slide 4](slides/Slide4.PNG)
-
-![Slide 5](slides/Slide5.PNG)
-
-![Slide 6](slides/Slide6.PNG)
-
-![Slide 7](slides/Slide7.PNG)
-
-![Slide 8](slides/Slide8.PNG)
-
-![Slide 9](slides/Slide9.PNG)
-
-![Slide 10](slides/Slide10.PNG)
-
-![Slide 11](slides/Slide11.PNG)
-
-</details>
-
----
-
-## Memo
+This note is for planning and structured thinking. The visitor-facing slide view lives in `../churn_prediction_slides.md`.
 
 ## Business Context
 - Churn prediction helps retention teams focus limited budget on customers most likely to leave.
@@ -51,7 +18,7 @@ Both formats are kept intentionally. The slides are optimized for presentation a
 
 ## Hypothesis
 - If customers are ranked by churn risk, the business should be able to capture a meaningful share of likely churners within a relatively small outreach segment.
-- Example: if the retention team can contact 20% of customers, a well-performing model should capture a majority of churners within this segment.
+- Example: if the retention team can contact 20% of customers, a well-performing model should capture a meaningful share of churners within this segment.
 
 ## Metric & Validation
 - Evaluate the model mainly as a ranking tool, not just a yes/no classifier.
@@ -83,9 +50,9 @@ Both formats are kept intentionally. The slides are optimized for presentation a
 
 ## Recommendation
 - Adopt a ranking-first retention workflow:
-  - rank customers by predicted churn risk
-  - target the top X-Y% segment based on campaign capacity
-  - prioritize high-risk and high-value customers
+- rank customers by predicted churn risk
+- target the top X-Y% segment based on campaign capacity
+- prioritize high-risk and high-value customers
 - This aligns model evaluation directly with business action and helps maximize retention impact under budget constraints.
 
 ## Appendix - Glossary

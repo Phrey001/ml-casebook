@@ -13,11 +13,16 @@ Each use case may include:
 
 The emphasis is on clarity and practical reasoning, rather than model complexity.
 
+More use cases and extensions will be added over time.
+
 ## Current Use Cases
+
+If a browser-view slide deck is available, start there first, then open the notebook for the implementation details.
 
 - Customer Churn Prediction
   - Framed as a prioritization problem under limited retention budget
-  - Main notebook: `ml-examples/churn_prediction/churn_prediction.ipynb`
+  - Start here: `ml-examples/churn_prediction/churn_prediction_slides.md`
+  - Notebook: `ml-examples/churn_prediction/churn_prediction.ipynb`
 - Movie Recommender System
   - Framed around personalized recommendation with lightweight implementations and practical evaluation considerations
   - Main notebook: `ml-examples/recommender/recommender.ipynb`
@@ -29,8 +34,6 @@ Each use case may also include companion problem-framing notes and lightweight s
 - Notebook template: `ml-examples/templates/ipynb_template.md`
 - Notebook companion framing template: `ml-examples/templates/notebook_problem_framing_template.md`
 - Pure-thinking case template: `ml-examples/templates/case_thinking_template.md`
-
-More use cases and extensions will be added over time.
 
 ## Virtual Environment Setup
 
