@@ -20,22 +20,27 @@
 ## Metric & Validation
 - `Recall@K` measures whether the held-out future item appears in the top-K recommendations.
 - Example: if we recommend the top 10 items, a strong model should capture a meaningful share of future interactions in that list, indicating that relevant items are consistently surfaced early.
-- Use a time-based holdout where possible so evaluation reflects future behavior rather than random shuffling.
+- For demo simplicity, use a single train-test split rather than a separate train-validation-test workflow.
+- Use a time-aware holdout so evaluation reflects future behavior rather than random shuffling.
+- Train only on interactions that happened before the held-out event. This avoids temporal leakage, but it also leaves less data available for fitting the model.
 
 ## Approach
 - Popularity baseline
 - Collaborative filtering with SVD
+- Score recommendations with the dot product between user and item embeddings so the model can reflect both similarity and preference strength
 - Deep learning retrieval and ranking models such as two-tower systems
 - Start with a popularity baseline first; only adopt a more complex model if it shows clear lift.
 
 ## Key Trade-Offs
 - **Popularity baseline**: simple and robust, but not personalized.
 - **SVD**: learns latent user and item factors, works on sparse interaction data, and is a strong interpretable baseline, but is mostly static and offline.
+- **Dot product vs cosine similarity**: dot product keeps magnitude, so it can represent how strongly a user prefers an item. Cosine similarity keeps direction only, which is less useful when ranking by preference strength.
 - **Deep models**: more scalable and expressive, but more complex to train, serve, and monitor.
 - **Cold start**: remains a key limitation without additional user or item features.
 - **Offline vs online**: offline `Recall@K` is useful, but the real business test is whether recommendations improve engagement in production.
 
 ## How the System Works
+- The notebook itself uses a simpler single-stage scoring setup. The flow below reflects how this use case would typically scale in production.
 - Offline training learns user and item representations.
 - Monitor model performance and retrain periodically as user behavior evolves.
 - Candidate generation narrows the search space to likely items.
