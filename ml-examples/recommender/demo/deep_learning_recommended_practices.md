@@ -11,7 +11,7 @@ This note outlines practical deep learning habits for recommender systems, highl
 ### Set Up The Problem Well
 | Practice | Status | Why it matters |
 |---|---|---|
-| **Build a minimal end-to-end walkthrough first**: start with the smallest useful data, model, and evaluation loop | X | In practical production work, this helps verify the full pipeline before scaling complexity or data volume. |
+| **Build a minimal end-to-end walkthrough first**: start with the smallest useful data, model, and evaluation loop | ✓ | The demos already do this to verify the full pipeline before scaling complexity or data volume. |
 | **Design the data and evaluation setup well**: make sure inputs, labels, splits, and metrics match the real problem | X | In production systems, data quality and evaluation design often matter more than model complexity. |
 | **Start with a simple baseline**: compare against an easier benchmark first | ✓ | Shows whether added complexity is actually helping. |
 | **Keep the data split clean**: separate `train`, `validation`, and `test` | ✓ | Prevents leakage and keeps evaluation honest. |
@@ -25,7 +25,6 @@ This note outlines practical deep learning habits for recommender systems, highl
 | **Check whether predictions look sensible**: inspect outputs, not just metrics | ✓ | Helps catch issues that summary numbers can hide. |
 | **Review where the model fails**: look at representative errors, not just average performance | X | Helps identify concrete weaknesses and guides the next improvement step. |
 | **Isolate what changed**: use component analysis or ablations when comparing model versions | X | Helps show which change actually improved or hurt performance. |
-| **Use model complexity carefully**: use the bias-variance tradeoff as a guide | ✓ | More flexible models can fit better, but may overfit. |
 | **Prefer fast iteration over premature perfection**: run small, informative experiments before polishing everything | X | Faster feedback usually leads to better decisions than trying to perfect the first version. |
 
 ### Improve The Model Deliberately
@@ -33,7 +32,9 @@ This note outlines practical deep learning habits for recommender systems, highl
 |---|---|---|
 | **Add complexity only when needed**: keep the model small unless a bigger one clearly helps | ✓ | Saves tuning effort and keeps the demo readable. |
 | **Try multiple settings**: tune learning rate, embedding size, batch size, and similar choices | X | Can improve performance and training stability. |
-| **Check weak spots by segment**: review performance for different user or item groups | X | Shows where the model breaks in practice. |
+| **Check weak spots by segment**: review performance for different user or item groups | X | Complements error review by showing which segments are consistently weaker. |
+| **Use model complexity carefully**: use the bias-variance tradeoff as a guide | ✓ | More flexible models can fit better, but may overfit. |
+| **Try richer recommender models**: add more features, more layers, or multiple stages such as retrieval, ranking, and re-ranking | X | Can capture more complex user-item behavior when simpler models plateau. |
 | **Validate online**: confirm gains through A/B testing | X | Offline gains do not always translate into product impact. |
 
 ### Data And Optimization Habits
@@ -45,11 +46,14 @@ This note outlines practical deep learning habits for recommender systems, highl
 | **Keep preprocessing readable**: do not over-engineer small demo code | ✓ | Makes the workflow easier to inspect and debug. |
 | **Test regularization choices**: try weight decay, dropout, or related controls | X | Can reduce overfitting. |
 | **Use clear evaluation views**: combine a main metric with supporting checks when needed | X | Gives a fuller picture of model quality. |
-| **Design evaluations to match the real task**: make the offline setup reflect how the model will actually be used | X | Reduces the risk of optimizing for the wrong target. |
 | **Track experiments**: record what changed from run to run | X | Makes comparisons easier to trust. |
+
+### Production And Monitoring Habits
+| Practice | Status | Why it matters |
+|---|---|---|
+| **Design evaluations to match the real task**: make the offline setup reflect how the model will actually be used | X | Reduces the risk of optimizing for the wrong target. |
 | **Save and monitor models properly**: support longer-running workflows | X | Improves reliability outside a notebook. |
 | **Watch for drift**: check for data drift and behavior drift over time | X | Helps signal when retraining is needed because inputs or user behavior may have shifted. |
-| **Try richer recommender models**: add more features, more layers, or multiple stages such as retrieval, ranking, and re-ranking | X | Can capture more complex user-item behavior. |
 
 ## Framework-Specific Habits
 ### TensorFlow / Keras
