@@ -201,6 +201,9 @@ cython_debug/
 .cursorignore
 .cursorindexingignore
 
+# Codex tooling markers
+.codex
+
 # Marimo
 marimo/_static/
 marimo/_lsp/

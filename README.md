@@ -25,15 +25,10 @@ If a browser-view slide deck is available, start there first, then open the note
   - Notebook: `ml-examples/churn_prediction/churn_prediction.ipynb`
 - Movie Recommender System
   - Framed around personalized recommendation with lightweight implementations and practical evaluation considerations
-  - Main notebook: `ml-examples/recommender/recommender.ipynb`
+  - Start here: `ml-examples/recommender/recommender_slides.md`
+  - Notebook: `ml-examples/recommender/recommender.ipynb`
 
 Each use case may also include companion problem-framing notes and lightweight supporting demos where useful.
-
-## Templates
-
-- Notebook template: `ml-examples/templates/ipynb_template.md`
-- Notebook companion framing template: `ml-examples/templates/notebook_problem_framing_template.md`
-- Pure-thinking case template: `ml-examples/templates/case_thinking_template.md`
 
 ## Virtual Environment Setup
 
@@ -47,3 +42,11 @@ python -m ipykernel install --user --name ml-casebook --display-name "Python (ml
 In your notebook editor, select the `Python (ml-casebook)` kernel.
 
 If you use VS Code, select the repo `.venv` interpreter first, then choose the same environment as the notebook kernel.
+
+## Templates (Developer Reference)
+
+These are lightweight scaffolds for structuring future notebooks and companion framing documents.
+
+- Notebook template: `ml-examples/templates/ipynb_template.md`
+- Notebook companion framing template: `ml-examples/templates/notebook_problem_framing_template.md`
+- Pure-thinking case template: `ml-examples/templates/case_thinking_template.md`

@@ -1,5 +1,7 @@
 # Recommender System Case Thinking
 
+Presentation-oriented slide companion: [../recommender_slides.md](/home/phrey/projects/ml-casebook/ml-examples/recommender/recommender_slides.md)
+
 ## Business Context
 - Recommender systems help users discover relevant content faster, which can improve engagement and retention in large catalogs.
 
