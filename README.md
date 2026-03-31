@@ -28,8 +28,6 @@ If a browser-view slide deck is available, start there first, then open the note
   - Start here: `ml-examples/recommender/recommender_slides.md`
   - Notebook: `ml-examples/recommender/recommender.ipynb`
 
-Each use case may also include companion problem-framing notes and lightweight supporting demos where useful.
-
 ## Virtual Environment Setup
 
 ```bash
