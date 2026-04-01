@@ -71,7 +71,10 @@ This note outlines practical deep learning habits for recommender systems, highl
 ## TensorFlow vs PyTorch
 - **TensorFlow / Keras**: useful when you want a concise, higher-level training workflow with built-in callback support.
 - **PyTorch**: useful when you want more direct control over the training loop and model behavior.
-- **Shared point**: both frameworks can build the same lightweight recommender; the better choice often depends on team preference, stack, and how much control you need.
+- **Shared point**: both frameworks can build the same lightweight ranking recommender; the better choice often depends on team preference, stack, and how much control you need.
+- **Training objective note**: the demos use sampled positive/negative pairs because neural ranking models are commonly trained that way, while the main `TruncatedSVD` notebook learns from the interaction matrix directly and does not need contrastive-style sampling.
+- **Regularization note**: the demos use comparable light regularization, but TensorFlow does it through layer-level `L2` penalties while PyTorch does it through optimizer-level `weight_decay`.
+- **Model-definition style**: PyTorch commonly uses class-based `nn.Module` definitions, while TensorFlow / Keras often uses the functional API for compact graph-style model assembly.
 
 ## GPU Environment Considerations
 - GPU support depends on the local CUDA and driver setup, not just the notebook code.
