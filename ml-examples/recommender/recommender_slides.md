@@ -27,4 +27,6 @@ Browser-friendly slide view. For the editable deck, open `slides/recommender.ppt
 
 ![Slide 10](slides/Slide10.PNG)
 
+![Slide 11](slides/Slide11.PNG)
+
 </details>
