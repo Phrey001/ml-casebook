@@ -1,6 +1,6 @@
-# Recommender System Slides
+# Marketing Incrementality A/B Testing Slides
 
-Browser-friendly slide view. For the editable deck, open `slides/recommender.pptx`.
+Browser-friendly slide view. For the editable deck, open `slides/marketing_incrementality_ab_testing.pptx`.
 
 ![Slide 1](slides/Slide1.PNG)
 
@@ -23,3 +23,7 @@ Browser-friendly slide view. For the editable deck, open `slides/recommender.ppt
 ![Slide 10](slides/Slide10.PNG)
 
 ![Slide 11](slides/Slide11.PNG)
+
+![Slide 12](slides/Slide12.PNG)
+
+![Slide 13](slides/Slide13.PNG)

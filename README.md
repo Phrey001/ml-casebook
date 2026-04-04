@@ -27,6 +27,10 @@ If a browser-view slide deck is available, start there first, then open the note
   - Framed around personalized recommendation with lightweight implementations and practical evaluation considerations
   - Start here: `ml-examples/recommender/recommender_slides.md`
   - Notebook: `ml-examples/recommender/recommender.ipynb`
+- Marketing Incrementality A/B Testing
+  - Framed around incrementality, attribution vs incrementality, unit economics, and targeting decisions
+  - Start here: `ml-examples/marketing_incrementality_ab_testing/marketing_incrementality_ab_testing_slides.md`
+  - Notebook: `ml-examples/marketing_incrementality_ab_testing/marketing_incrementality_ab_testing.ipynb`
 
 ## Virtual Environment Setup
 
