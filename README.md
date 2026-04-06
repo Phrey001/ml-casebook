@@ -28,7 +28,7 @@ If a browser-view slide deck is available, start there first, then open the note
   - Start here: `ml-examples/recommender/recommender_slides.md`
   - Notebook: `ml-examples/recommender/recommender.ipynb`
 - Marketing Incrementality A/B Testing
-  - Framed around incrementality, attribution vs incrementality, unit economics, and targeting decisions
+  - Quantifying causal lift and translating A/B test results into budget allocation and targeted rollout decisions
   - Start here: `ml-examples/marketing_incrementality_ab_testing/marketing_incrementality_ab_testing_slides.md`
   - Notebook: `ml-examples/marketing_incrementality_ab_testing/marketing_incrementality_ab_testing.ipynb`
 
